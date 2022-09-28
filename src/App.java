@@ -10,8 +10,6 @@ public class App {
         ArrayList<Player> players = new ArrayList<Player>();
         players.add(dealer);
 
-//        System.out.println("How many players are playing?");
-//        int numPlayers = scan.nextInt();
 
         System.out.println("What is your name ?");
         String name = scan.nextLine();
