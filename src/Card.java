@@ -9,8 +9,6 @@ public class Card {
         this.value = value;
     }
 
-
-
     public String getName() {
         return name;
     }
@@ -24,5 +22,8 @@ public class Card {
     }
 
 
+    public String toString(){
+        return this.name;
+    }
 
 }

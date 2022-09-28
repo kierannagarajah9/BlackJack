@@ -3,10 +3,11 @@ import java.util.Random;
 
 public class Deck {
     private ArrayList<Card> myCards;
-    private String[] names = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
-    private String[] suits = {"Clubs", "Spades", "Hearts", "Dimes"};
+
     private int deckNum = 52;
 
+    private String[] names = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
+    private String[] suits = {"Clubs", "Spades", "Hearts", "Dimes"};
 
     //Creates the deck of 52
     public Deck() {
@@ -44,10 +45,11 @@ public class Deck {
 
     public void dealCards(ArrayList<Player> players) {
         int numCards = 2 * players.size();
-        for(int i=1;i<= numCards;i++){
-           int currentPlayer = i%2;
+        for (int i = 1; i <= numCards; i++) {
+            int currentPlayer = i % 2;
             players.get(currentPlayer).addCard(this.myCards.get(0));
             this.myCards.remove(0);
+            players.get(currentPlayer).calcSum();
         }
 
 
@@ -58,9 +60,5 @@ public class Deck {
         this.myCards.remove(0);
         deckNum--;
         return nextCard;
-    }
-
-    public int getDeckNum() {
-        return this.deckNum;
     }
 }

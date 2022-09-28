@@ -24,10 +24,29 @@ public class App {
         myDeck.shuffle();
         myDeck.dealCards(players);
 
-        for(Player x: players){
+        for (Player x : players) {
             System.out.println(x.toString());
         }
 
+
+        for (int i = 0; i < players.size(); i++) {
+            while (true) {
+                System.out.println(players.get(i).toString());
+                System.out.println("Would you like to hit or stand?");
+                String option = scan.nextLine();
+                if (option.equals("hit")) {
+                    Card nextCard = myDeck.drawCard();
+                    System.out.println(nextCard.toString());
+                    players.get(i).addCard(nextCard);
+                    players.get(i).toString();
+
+
+
+                } else {
+                    break;
+                }
+            }
+        }
 
 
     }
